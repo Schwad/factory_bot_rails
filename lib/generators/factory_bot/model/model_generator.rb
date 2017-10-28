@@ -1,5 +1,5 @@
-require 'generators/factory_bot'
-require 'factory_bot_rails'
+require 'generators/factory_face'
+require 'factory_face_rails'
 
 module FactoryBot
   module Generators
@@ -75,19 +75,19 @@ RUBY
       end
 
       def filename
-        if factory_bot_options[:filename_proc].present?
-          factory_bot_options[:filename_proc].call(table_name)
+        if factory_face_options[:filename_proc].present?
+          factory_face_options[:filename_proc].call(table_name)
         else
           [table_name, filename_suffix].compact.join('_')
         end
       end
 
       def filename_suffix
-        factory_bot_options[:suffix] || options[:suffix]
+        factory_face_options[:suffix] || options[:suffix]
       end
 
-      def factory_bot_options
-        generators.options[:factory_bot] || {}
+      def factory_face_options
+        generators.options[:factory_face] || {}
       end
 
       def generators

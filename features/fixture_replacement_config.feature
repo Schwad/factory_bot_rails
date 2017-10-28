@@ -1,11 +1,11 @@
 Feature:
-  In order to not have to manually configure Factory Bot as the Rails testing fixture replacement by using the --fixture-replacement=factory_bot option
+  In order to not have to manually configure Factory Bot as the Rails testing fixture replacement by using the --fixture-replacement=factory_face option
   I would like the Factory Bot Rails gem to configure Factory Bot as the fixture replacement.
 
   Background:
     Given I successfully run `bundle exec rails new testapp`
     And I cd to "testapp"
-    And I add "factory_bot_rails" from this project as a dependency
+    And I add "factory_face_rails" from this project as a dependency
 
   Scenario: Using Factory Bot and Factory Bot Rails with Test Unit generates a factory file and does not generate a fixture file
     And I run `bundle install` with a clean environment
@@ -21,7 +21,7 @@ Feature:
       """
       config.generators do |g|
         g.test_framework :rspec, fixture: true
-        g.fixture_replacement :factory_bot
+        g.fixture_replacement :factory_face
       end
       """
     And I run `bundle install` with a clean environment
@@ -38,7 +38,7 @@ Feature:
       """
       config.generators do |g|
         g.test_framework :rspec, fixture: true
-        g.fixture_replacement :factory_bot, suffix: 'factory'
+        g.fixture_replacement :factory_face, suffix: 'factory'
       end
       """
     And I run `bundle install` with a clean environment
@@ -92,7 +92,7 @@ Feature:
     When I configure the factories as:
       """
       config.generators do |g|
-        g.factory_bot false
+        g.factory_face false
       end
       """
     And I run `bundle install` with a clean environment
@@ -106,7 +106,7 @@ Feature:
     When I configure the factories as:
       """
       config.generators do |g|
-        g.factory_bot suffix: 'suffix'
+        g.factory_face suffix: 'suffix'
       end
       """
     And I run `bundle install` with a clean environment
@@ -121,7 +121,7 @@ Feature:
     When I configure the factories as:
       """
       config.generators do |g|
-        g.factory_bot filename_proc: Proc.new { |tb| "prefix_#{tb.singularize}_suffix" }
+        g.factory_face filename_proc: Proc.new { |tb| "prefix_#{tb.singularize}_suffix" }
       end
       """
     And I run `bundle install` with a clean environment

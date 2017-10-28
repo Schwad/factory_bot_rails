@@ -6,17 +6,17 @@ module FactoryBotRails
       end
 
       def run
-        @generators.fixture_replacement fixture_replacement_setting, dir: factory_bot_directory
+        @generators.fixture_replacement fixture_replacement_setting, dir: factory_face_directory
       end
 
       private
 
       def fixture_replacement_setting
-        @generators.options[:rails][:fixture_replacement] || :factory_bot
+        @generators.options[:rails][:fixture_replacement] || :factory_face
       end
 
-      def factory_bot_directory
-        @generators.options.fetch(:factory_bot, {}).fetch(:dir, 'spec/factories')
+      def factory_face_directory
+        @generators.options.fetch(:factory_face, {}).fetch(:dir, 'spec/factories')
       end
     end
   end

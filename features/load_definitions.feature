@@ -3,7 +3,7 @@ Feature: automatically load step definitions
   Background:
     When I successfully run `bundle exec rails new testapp`
     And I cd to "testapp"
-    And I add "factory_bot_rails" from this project as a dependency
+    And I add "factory_face_rails" from this project as a dependency
     And I add "test-unit" as a dependency
     And I run `bundle install` with a clean environment
     And I write to "db/migrate/1_create_users.rb" with:
@@ -56,7 +56,7 @@ Feature: automatically load step definitions
       module SomeRailtie
         class Railtie < ::Rails::Engine
 
-          initializer "some_railtie.factories", :after => "factory_bot.set_factory_paths" do
+          initializer "some_railtie.factories", :after => "factory_face.set_factory_paths" do
             FactoryBot.definition_file_paths << File.expand_path('../factories', __FILE__)
           end
         end

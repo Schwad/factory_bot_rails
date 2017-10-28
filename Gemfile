@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gemspec name: 'factory_bot_rails'
+gemspec name: 'factory_face_rails'
 
 gem 'appraisal'
 gem 'aruba'
